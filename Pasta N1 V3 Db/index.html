@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/Index.css">
+    <title>Two Rivers</title>
+
+</head>
+<body>
+    
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./htmlpages/AboutMe.html">About Me</a></li>
+                <li><a href="#tosale">To Sale</a></li>
+                <li><a href="#joinus">Resuns tu Join Us</a></li>
+
+                <!-- Selecionar idoma -->
+                <li>
+                    <div class="language-selector">
+                        <label for="language">Select Language:</label>
+                        <select id="language">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                            <!-- Adicione mais opções de idioma conforme necessário -->
+                        </select>
+                    </div>
+                </li>
+            <!-- Selecionar idoma -->
+            
+        </ul>
+        </nav>
+    </header>
+    <!-- NAVBAR -->
+    
+    <style>
+        h1,p{
+            color: aliceblue;
+        }
+    </style>
+
+
+<!-- PARTE QUE VAI SER TRADUZIDA COM O JS ATRAVES DO data=ii8n="hello, sample........" -->
+<div id="content">
+    <h1 data-i18n="hello">Hello, World!</h1>
+    <p data-i18n="sample">This is some sample content.</p>
+    <div class="contentimg">
+    <img src="https://m.media-amazon.com/images/I/7155b-GE-uL._AC_SL1500_.jpg" alt="" width="300px">
+    </div>
+    <p data-i18n="buru">Entering now.</p>
+
+</div>
+<!-- PARTE QUE VAI SER TRADUZIDA COM O JS ATRAVES DO data=ii8n="hello, sample........" -->
+
+
+
+
+<!-- Ligaçao ao js que faz a tradução (PARA TRADUZIR È NESSARIO CRIAR UMA NOVA VARIAVEL PARA DEPOIS Inverir
+    Na "div id= "content"")-->
+<script src="./Js/Tranlate.js"></script>
+<!-- Ligaçao ao js que faz a tradução (PARA TRADUZIR È NESSARIO CRIAR UMA NOVA VARIAVEL PARA DEPOIS Inverir
+    Na "div id= "content"")-->
+
+</body>
+</html>
