@@ -81,8 +81,20 @@ body{
     background-color: #444;
 }
 
+.contentimg{
+
+
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    align-items: center; /* Alinha verticalmente ao centro */
+    /* height: 100vh;  100% da altura da viewport */
+
+}
+
 h1, p, img{
 
-
+align-items: center;
+text-align: center;
+justify-content: center;
     
 }
