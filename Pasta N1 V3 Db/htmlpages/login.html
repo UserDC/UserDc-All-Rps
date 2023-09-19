@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
     <link rel="stylesheet" href="../Css/Index.css">
-    <title>Document</title>
 </head>
 <body>
-    
+
     <!-- NAVBAR -->
     <header>
         <nav class="navbar">
@@ -37,21 +35,23 @@
     <!-- NAVBAR -->
     
     <style>
-        h1,p{
+        h1,p,h2,label{
             color: aliceblue;
         }
+        input{
+        color: rgb(255, 255, 255);
+        background-color: black;
+        }   
     </style>
 
-<div id="content">
-    <h1 data-i18n="hello">Hello, World!</h1>
-    <p data-i18n="UMI">This is some sample content.</p>
-    <img src="https://images.squarespace-cdn.com/content/v1/5b7d4626f2e6b181437ede20/1680179544105-Y67XY5VFZI3MK1Z0NOXY/wild-burro-selfie.jpg?format=500w" alt="">
-    <p data-i18n="buru">Entering now.</p>
-    
-</div>
 
-
-<script src="../Js/Tranlate.js"></script>
-
+    <h2>Login</h2>
+    <form action="../phpages/login.php" method="POST">
+        <label for="email">Email:</label>
+        <input type="text" name="email" placeholder="Insert your Email Adres" required><br><br>
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" placeholder="Insert your password" required><br><br>
+        <input type="submit" value="Entrar">
+    </form>
 </body>
 </html>
