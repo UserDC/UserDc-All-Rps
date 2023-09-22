@@ -1,7 +1,7 @@
 <?php
 // Conectando ao banco de dados
 
-$conn = new mysqli("localhost", "root", "", "ElineDb");
+include 'conect.php';
 
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
