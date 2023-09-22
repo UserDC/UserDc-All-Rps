@@ -43,11 +43,26 @@
 </style>
 
 
-<H1>LOGUIN FEITO COM SOSESO teste</H1>
+<h2>Insert House</h2>
+<form action="../phpages/InsertHouses.php" method="POST" enctype="multipart/form-data">
+    <label for="Owner">Owner:</label>
+    <input type="text" name="Owner" id="Owner" required><br><br>
+
+    <label for="Price">Price:</label>
+    <input type="text" name="Price" id="Price" required><br><br>
+
+    <!-- 
+    <label for="arquivo">Escolha um arquivo:</label>
+    <input type="file" name="arquivo" id="arquivo" accept=".pdf, .doc, .docx" required><br><br>
+ -->    
 
 
-<a href="./InsertHouses.html">
-    <H1>Insert Houses</H1>
+    <input type="submit" value="Enviar Arquivo">
+</form>
+
+
+<a href="./InLogin.html">
+    <H1>Back To InLogin page</H1>
 </a>
 
 </body>
