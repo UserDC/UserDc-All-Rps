@@ -1,43 +1,33 @@
 <?php
-// Conectando ao banco de dados
 
 include 'conect.php';
 
+
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtém os dados do formulário
-    $Owner = $_POST["Owner"];
-    $Price = $_POST["Price"];
+    $owner = $_POST["Owner"];
+    $price = $_POST["Price"];
     
-    /* 
-    $nomeArquivo = $_FILES["arquivo"]["name"];
-    $tmpNomeArquivo = $_FILES["arquivo"]["tmp_name"];
- */
-
-    // Move o arquivo para o diretório desejado (por exemplo, 'uploads/')
+    // Prepara uma instrução SQL para a inserção
+    $sql = "INSERT INTO houses (Owner, Price) VALUES (?, ?)";
     
-    
-/*
-     $diretorioDestino = 'uploads/';
-    move_uploaded_file($tmpNomeArquivo, $diretorioDestino . $nomeArquivo);
- */
-
-    if ($conn->connect_error) {
-        die("Erro na conexão com a base de dados: " . $conn->connect_error);
-    }
-
-    $sql = "INSERT INTO houses (Owner, Price) VALUES ($Owner, $Price)";
+    // Prepara a instrução SQL usando uma declaração preparada para evitar injeção de SQL
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $Owner, $Price);
-
+    
+    // Vincula os parâmetros à declaração preparada
+    $stmt->bind_param("si",$owner, $price);
+    
+    // Executa a instrução SQL
     if ($stmt->execute()) {
-        echo "Arquivo enviado e dados inseridos com sucesso na base de dados.";
+        echo "Dados inseridos com sucesso na tabela houses.";
     } else {
-        echo "Erro ao inserir dados na base de dados: " . $conn->error;
+        echo "Erro ao inserir dados na tabela houses: " . $stmt->error;
     }
-
-    // Feche a conexão com a base de dados
+    
+    // Fecha a declaração preparada
     $stmt->close();
-    $conn->close();
 }
+
+// Fecha a conexão com o banco de dados
+$conn->close();
 ?>
